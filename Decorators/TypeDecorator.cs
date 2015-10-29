@@ -26,7 +26,7 @@ namespace Custom_Scenery.Decorators
                 case "seating":
                     (new SeatingDecorator()).Decorate(go, options, assetBundle);
                     break;
-                case "seating_auto":
+                case "seatingAuto":
                     (new SeatingAutoDecorator()).Decorate(go, options, assetBundle);
                     break;
                 case "fence":
@@ -47,7 +47,7 @@ namespace Custom_Scenery.Decorators
                 case "deco":
                 case "trashbin":
                 case "seating":
-                case "seating_auto":
+                case "seatingAuto":
                 case "lamp":
                     asset = Object.Instantiate(bundle.LoadAsset((string) options["model"])) as GameObject;
                     break;
