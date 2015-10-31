@@ -17,7 +17,7 @@ namespace Custom_Scenery.Decorators
 
         public void Decorate(GameObject go, Dictionary<string, object> options, AssetBundle assetBundle)
         {
-            go.GetComponent<Deco>().heightChangeDelta = 0.25f;
+            go.GetComponent<Deco>().heightChangeDelta = _height;
         }
     }
 }
