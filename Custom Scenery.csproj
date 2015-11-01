@@ -63,6 +63,7 @@
     <Compile Include="Decorators\IDecorator.cs" />
     <Compile Include="Decorators\NameDecorator.cs" />
     <Compile Include="Decorators\PriceDecorator.cs" />
+    <Compile Include="Decorators\RecolorableDecorator.cs" />
     <Compile Include="Decorators\TypeDecorator.cs" />
     <Compile Include="Decorators\Type\FenceDecorator.cs" />
     <Compile Include="Decorators\Type\LampDecorator.cs" />

@@ -31,6 +31,16 @@ namespace Custom_Scenery.Decorators
                 }
 
                 cc.customColors = colors.ToArray();
+                
+                foreach (Material material in Resources.FindObjectsOfTypeAll<Material>())
+                {
+                    if (material.name == "CustomColorsDiffuse")
+                    {
+                        go.GetComponent<Renderer>().sharedMaterial = material;
+
+                        break;
+                    }
+                }
             }
         }
 
