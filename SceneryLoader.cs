@@ -42,6 +42,9 @@ namespace Custom_Scenery
 
                             if (options.ContainsKey("grid"))
                                 (new GridDecorator((bool)options["grid"])).Decorate(asset, options, bundle);
+                            
+                            if (options.ContainsKey("recolorable"))
+                                (new RecolorableDecorator((bool)options["recolorable"])).Decorate(asset, options, bundle);
 
                             DontDestroyOnLoad(asset);
 
