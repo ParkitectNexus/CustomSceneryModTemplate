@@ -36,7 +36,7 @@ namespace Custom_Scenery.Decorators
                 {
                     if (material.name == "CustomColorsDiffuse")
                     {
-                        go.GetComponent<Renderer>().sharedMaterial = material;
+                        go.GetComponentInChildren<Renderer>().sharedMaterial = material;
 
                         break;
                     }
