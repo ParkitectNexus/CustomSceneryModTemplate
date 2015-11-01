@@ -19,8 +19,32 @@ namespace Custom_Scenery.Decorators
         {
             if (go.GetComponent<BuildableObject>() != null && _recolorable)
             {
-                go.AddComponent<CustomColors>();
+                CustomColors cc = go.AddComponent<CustomColors>();
+
+                List<Color> colors = new List<Color>();
+
+                if (options.ContainsKey("recolorableOptions"))
+                {
+                    Dictionary<string, object> clrs = (Dictionary <string, object>)options["recolorableOptions"];
+
+                    colors.AddRange(clrs.Values.Select(color => FromHex((string) color)));
+                }
+
+                cc.customColors = colors.ToArray();
             }
+        }
+
+        private Color FromHex(string hex)
+        {
+            if (hex.StartsWith("#"))
+                hex = hex.Substring(1);
+
+            if (hex.Length != 6) throw new Exception("Color not valid");
+
+            return new Color(
+                int.Parse(hex.Substring(0, 2), System.Globalization.NumberStyles.HexNumber),
+                int.Parse(hex.Substring(2, 2), System.Globalization.NumberStyles.HexNumber),
+                int.Parse(hex.Substring(4, 2), System.Globalization.NumberStyles.HexNumber));
         }
     }
 }
