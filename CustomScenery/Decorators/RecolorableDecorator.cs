@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using UnityEngine;
-using static System.Int32;
 
 namespace Custom_Scenery.Decorators
 {
@@ -54,14 +53,14 @@ namespace Custom_Scenery.Decorators
                 try
                 {
                     string str = hex.Substring(1, hex.Length - 1);
-                    clr.r = Parse(str.Substring(0, 2),
+                    clr.r = Int32.Parse(str.Substring(0, 2),
                         NumberStyles.AllowHexSpecifier) / 255.0f;
-                    clr.g = Parse(str.Substring(2, 2),
+                    clr.g = Int32.Parse(str.Substring(2, 2),
                         NumberStyles.AllowHexSpecifier) / 255.0f;
-                    clr.b = Parse(str.Substring(4, 2),
+                    clr.b = Int32.Parse(str.Substring(4, 2),
                         NumberStyles.AllowHexSpecifier) / 255.0f;
                     if (str.Length == 8)
-                        clr.a = Parse(str.Substring(6, 2),
+                        clr.a = Int32.Parse(str.Substring(6, 2),
                         NumberStyles.AllowHexSpecifier) / 255.0f;
                     else clr.a = 1.0f;
                 }

@@ -58,21 +58,21 @@
     <None Include="scenery.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Decorators\GridDecorator.cs" />
-    <Compile Include="Decorators\HeightDecorator.cs" />
-    <Compile Include="Decorators\IDecorator.cs" />
-    <Compile Include="Decorators\NameDecorator.cs" />
-    <Compile Include="Decorators\PriceDecorator.cs" />
-    <Compile Include="Decorators\RecolorableDecorator.cs" />
-    <Compile Include="Decorators\TypeDecorator.cs" />
-    <Compile Include="Decorators\Type\FenceDecorator.cs" />
-    <Compile Include="Decorators\Type\LampDecorator.cs" />
-    <Compile Include="Decorators\Type\SeatingAutoDecorator.cs" />
-    <Compile Include="Decorators\Type\DecoDecorator.cs" />
-    <Compile Include="Decorators\Type\SeatingDecorator.cs" />
-    <Compile Include="Decorators\Type\TrashBinDecorator.cs" />
-    <Compile Include="Main.cs" />
-    <Compile Include="SceneryLoader.cs" />
+    <Compile Include="CustomScenery\Decorators\GridDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\HeightDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\IDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\NameDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\PriceDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\RecolorableDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\TypeDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\Type\FenceDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\Type\LampDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\Type\SeatingAutoDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\Type\DecoDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\Type\SeatingDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\Type\TrashBinDecorator.cs" />
+    <Compile Include="CustomScenery\Main.cs" />
+    <Compile Include="CustomScenery\SceneryLoader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
