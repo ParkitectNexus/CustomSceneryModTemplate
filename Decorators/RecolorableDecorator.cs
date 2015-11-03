@@ -46,15 +46,32 @@ namespace Custom_Scenery.Decorators
 
         private Color FromHex(string hex)
         {
-            if (hex.StartsWith("#"))
-                hex = hex.Substring(1);
+            Color clr = new Color(0, 0, 0);
 
-            if (hex.Length != 6) throw new Exception("Color not valid");
+            if (!string.IsNullOrEmpty(hex))
+            {
+                try
+                {
+                    string str = hex.Substring(1, hex.Length - 1);
+                    clr.r = Parse(str.Substring(0, 2),
+                        NumberStyles.AllowHexSpecifier) / 255.0f;
+                    clr.g = Parse(str.Substring(2, 2),
+                        NumberStyles.AllowHexSpecifier) / 255.0f;
+                    clr.b = Parse(str.Substring(4, 2),
+                        NumberStyles.AllowHexSpecifier) / 255.0f;
+                    if (str.Length == 8)
+                        clr.a = Parse(str.Substring(6, 2),
+                        NumberStyles.AllowHexSpecifier) / 255.0f;
+                    else clr.a = 1.0f;
+                }
+                catch (Exception e)
+                {
+                    Debug.Log("Could not convert " + hex + " to Color. " + e);
+                    return new Color(0, 0, 0, 0);
+                }
+            }
 
-            return new Color(
-                int.Parse(hex.Substring(0, 2), System.Globalization.NumberStyles.HexNumber),
-                int.Parse(hex.Substring(2, 2), System.Globalization.NumberStyles.HexNumber),
-                int.Parse(hex.Substring(4, 2), System.Globalization.NumberStyles.HexNumber));
+            return clr;
         }
     }
 }
