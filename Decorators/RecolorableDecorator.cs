@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Text;
 using UnityEngine;
+using static System.Int32;
 
 namespace Custom_Scenery.Decorators
 {
