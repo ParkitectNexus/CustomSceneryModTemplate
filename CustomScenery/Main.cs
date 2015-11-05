@@ -2,7 +2,7 @@
 
 namespace Custom_Scenery
 {
-    class Main : IMod
+    public class Main : IMod
     {
         private GameObject _go;
 
