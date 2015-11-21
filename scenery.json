@@ -1,7 +1,7 @@
 ﻿{
     "Cube": {
 		"model": "cube_model",
-		"type": "deco"
+		"type": "deco",
 		"price": 20.5
 	}
 }
