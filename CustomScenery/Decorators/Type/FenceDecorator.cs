@@ -17,8 +17,6 @@ namespace Custom_Scenery.Decorators.Type
                 GameObject flat = Object.Instantiate(assetBundle.LoadAsset((string)fenceOptions["flat"])) as GameObject;
                 flat.transform.rotation = Quaternion.identity;
                 go.GetComponent<Fence>().flatGO = flat;
-
-                go.GetComponent<Fence>().hasMidPosts = false;
             }
 
             if (fenceOptions.ContainsKey("post"))
@@ -26,9 +24,9 @@ namespace Custom_Scenery.Decorators.Type
                 GameObject post = Object.Instantiate(assetBundle.LoadAsset((string)fenceOptions["post"])) as GameObject;
                 post.transform.rotation = Quaternion.identity;
                 go.GetComponent<Fence>().postGO = post;
-
-                go.GetComponent<Fence>().hasMidPosts = true;
             }
+
+            go.GetComponent<Fence>().hasMidPosts = false;
         }
     }
 }
