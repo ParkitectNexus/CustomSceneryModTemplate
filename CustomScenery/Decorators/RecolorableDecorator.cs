@@ -27,7 +27,10 @@ namespace Custom_Scenery.Decorators
                 {
                     Dictionary<string, object> clrs = (Dictionary <string, object>)options["recolorableOptions"];
 
-                    colors.AddRange(clrs.Values.Select(color => FromHex((string) color)));
+                    foreach (KeyValuePair<string, object> clr in clrs)
+                    {
+                        colors.Add(FromHex((string)clr.Value));
+                    }
                 }
 
                 cc.customColors = colors.ToArray();
