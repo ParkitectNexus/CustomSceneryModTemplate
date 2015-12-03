@@ -11,14 +11,24 @@ namespace Custom_Scenery.Decorators.Type
 
             Dictionary<string, object> fenceOptions = options["fenceOptions"] as Dictionary<string, object>;
 
-            GameObject flat = Object.Instantiate(assetBundle.LoadAsset((string)fenceOptions["flat"])) as GameObject;
-            flat.transform.rotation = Quaternion.identity;
-            GameObject post = Object.Instantiate(assetBundle.LoadAsset((string)fenceOptions["post"])) as GameObject;
-            post.transform.rotation = Quaternion.identity;
 
-            go.GetComponent<Fence>().flatGO = flat;
-            go.GetComponent<Fence>().postGO = post;
-            go.GetComponent<Fence>().hasMidPosts = false;
+            if (fenceOptions.ContainsKey("flat"))
+            {
+                GameObject flat = Object.Instantiate(assetBundle.LoadAsset((string)fenceOptions["flat"])) as GameObject;
+                flat.transform.rotation = Quaternion.identity;
+                go.GetComponent<Fence>().flatGO = flat;
+
+                go.GetComponent<Fence>().hasMidPosts = false;
+            }
+
+            if (fenceOptions.ContainsKey("post"))
+            {
+                GameObject post = Object.Instantiate(assetBundle.LoadAsset((string)fenceOptions["post"])) as GameObject;
+                post.transform.rotation = Quaternion.identity;
+                go.GetComponent<Fence>().postGO = post;
+
+                go.GetComponent<Fence>().hasMidPosts = true;
+            }
         }
     }
 }
