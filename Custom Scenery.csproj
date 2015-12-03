@@ -35,7 +35,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Parkitect_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -59,11 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomScenery\Decorators\GridDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\GridSubdivisionDecorator.cs" />
     <Compile Include="CustomScenery\Decorators\HeightDecorator.cs" />
     <Compile Include="CustomScenery\Decorators\IDecorator.cs" />
     <Compile Include="CustomScenery\Decorators\NameDecorator.cs" />
     <Compile Include="CustomScenery\Decorators\PriceDecorator.cs" />
     <Compile Include="CustomScenery\Decorators\RecolorableDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\SnapToCenterDecorator.cs" />
     <Compile Include="CustomScenery\Decorators\TypeDecorator.cs" />
     <Compile Include="CustomScenery\Decorators\Type\FenceDecorator.cs" />
     <Compile Include="CustomScenery\Decorators\Type\LampDecorator.cs" />

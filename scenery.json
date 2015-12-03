@@ -2,6 +2,8 @@
     "Cube": {
 		"model": "cube_model",
 		"type": "deco",
-		"price": 20.5
+		"price": 20.5,
+		"gridSubdivision": 2.0,
+		"snapCenter": false
 	}
 }
