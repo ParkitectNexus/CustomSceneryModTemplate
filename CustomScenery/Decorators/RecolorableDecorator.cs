@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -32,27 +32,46 @@ namespace Custom_Scenery.Decorators
                         colors.Add(FromHex((string)clr.Value));
                     }
                 }
-
+                
                 cc.customColors = colors.ToArray();
-
-                foreach (Material material in Resources.FindObjectsOfTypeAll<Material>())
+                
+                foreach (Material material in AssetManager.Instance.objectMaterials)
                 {
                     if (material.name == "CustomColorsDiffuse")
                     {
-                        go.GetComponentInChildren<Renderer>().sharedMaterial = material;
+                        SetMaterial(go, material);
 
-                        // Go through all child objects and recolor		
-                        Renderer[] renderCollection;
-                        renderCollection = go.GetComponentsInChildren<Renderer>();
+                        // edge case for fences
+                        Fence fence = go.GetComponent<Fence>();
 
-                        foreach (Renderer render in renderCollection)
+                        if (fence != null)
                         {
-                            render.sharedMaterial = material;
+                            if (fence.flatGO != null)
+                            {
+                                SetMaterial(fence.flatGO, material);
+                            }
+
+                            if (fence.postGO != null)
+                            {
+                                SetMaterial(fence.postGO, material);
+                            }
                         }
 
                         break;
                     }
                 }
+            }
+        }
+
+        private void SetMaterial(GameObject go, Material material)
+        {
+            // Go through all child objects and recolor		
+            Renderer[] renderCollection;
+            renderCollection = go.GetComponentsInChildren<Renderer>();
+
+            foreach (Renderer render in renderCollection)
+            {
+                render.sharedMaterial = material;
             }
         }
 
