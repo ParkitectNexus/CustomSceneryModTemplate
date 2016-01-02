@@ -33,7 +33,7 @@ namespace Custom_Scenery.Decorators
                     }
                 }
                 
-                cc.customColors = colors.ToArray();
+                cc.setColors(colors.ToArray());
                 
                 foreach (Material material in AssetManager.Instance.objectMaterials)
                 {
