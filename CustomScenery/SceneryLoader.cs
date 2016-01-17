@@ -50,7 +50,11 @@ namespace Custom_Scenery
 
                             DontDestroyOnLoad(asset);
 
-                            AssetManager.Instance.registerObject(asset.GetComponent<BuildableObject>());
+                            BuildableObject buildableObject = asset.GetComponent<BuildableObject>();
+                            buildableObject.dontSerialize = true;
+                            buildableObject.isPreview = true;
+
+                            AssetManager.Instance.registerObject(buildableObject);
                             _sceneryObjects.Add(asset.GetComponent<BuildableObject>());
                             
                             // hide it from view
