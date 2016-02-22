@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Parkitect_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\Desktop\Parkitect pa 6\Parkitect_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\Parkitect_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\Desktop\Parkitect pa 6\Parkitect_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>..\..\Parkitect_Data\Managed\UnityEngine.UI.dll</HintPath>
@@ -66,6 +66,7 @@
     <Compile Include="CustomScenery\Decorators\RecolorableDecorator.cs" />
     <Compile Include="CustomScenery\Decorators\SnapToCenterDecorator.cs" />
     <Compile Include="CustomScenery\Decorators\TypeDecorator.cs" />
+    <Compile Include="CustomScenery\Decorators\Type\CategoryDecorator.cs" />
     <Compile Include="CustomScenery\Decorators\Type\FenceDecorator.cs" />
     <Compile Include="CustomScenery\Decorators\Type\LampDecorator.cs" />
     <Compile Include="CustomScenery\Decorators\Type\SeatingAutoDecorator.cs" />
