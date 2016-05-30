@@ -11,6 +11,8 @@ namespace Custom_Scenery.Decorators.Type
         {
             go.AddComponent<Deco>();
 
+            go.GetComponent<Deco>().buildOnLayerMask = LayerMasks.TERRAIN;
+
             if (options.ContainsKey("heightDelta"))
                 (new HeightDecorator((double)options["heightDelta"])).Decorate(go, options, assetBundle);
 
